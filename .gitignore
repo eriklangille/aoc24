@@ -1,0 +1,7 @@
+# Ignore all files
+*
+# except directories containing *.zig, *.md, and .gitignore
+!*/
+!*.zig
+!*.md
+!.gitignore
