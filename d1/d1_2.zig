@@ -2,7 +2,6 @@ const std = @import("std");
 const input = @embedFile("./input.txt");
 
 pub fn main() !void {
-    std.debug.print("hello advent of code\n", .{});
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     const alloc = gpa.allocator();
     var it = std.mem.tokenizeAny(u8, input, "\n ");
