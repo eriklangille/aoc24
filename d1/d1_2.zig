@@ -9,6 +9,9 @@ pub fn main() !void {
     var list1 = std.ArrayList(u32).init(alloc);
     var list2 = std.ArrayList(u32).init(alloc);
     var map = std.AutoHashMap(u32, u32).init(alloc);
+    defer list1.deinit();
+    defer list2.deinit();
+    defer map.deinit();
 
     var index: u32 = 0;
     while (it.next()) |token| {

@@ -21,6 +21,8 @@ pub fn main() !void {
     }
     const buf1 = try list1.toOwnedSlice();
     const buf2 = try list2.toOwnedSlice();
+    defer alloc.free(buf1);
+    defer alloc.free(buf2);
 
     std.mem.sort(i32, buf1, {}, comptime std.sort.asc(i32));
     std.mem.sort(i32, buf2, {}, comptime std.sort.asc(i32));
