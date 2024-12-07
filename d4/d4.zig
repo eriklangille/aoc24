@@ -67,6 +67,5 @@ pub fn main() !void {
             }
         }
     }
-
     std.debug.print("result: {d}\n", .{result});
 }
