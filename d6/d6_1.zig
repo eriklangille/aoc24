@@ -24,7 +24,6 @@ const Pointing = struct {
         const add = directions[point.direction];
         const next: Point = .{ .x = point.pos.x + add.x, .y = point.pos.y + add.y };
         if (!valid(next.x, next.y, @intCast(xlen), @intCast(ylen))) {
-            // std.debug.print("point: x: {d} y: {d}, lenx: {d}, leny: {d}\n", .{ next.x, next.y, xlen, ylen });
             return false;
         }
         const item: *u8 = &list[@intCast(next.y)][@intCast(next.x)];
@@ -105,6 +104,10 @@ pub fn main() !void {
             }
             potential.* = 0;
         }
+    }
+
+    for (list.items) |line_arr| {
+        alloc.free(line_arr);
     }
 
     std.debug.print("result: {d}\n", .{result});
