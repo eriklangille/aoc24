@@ -114,4 +114,5 @@ pub fn main() !void {
         _ = key;
         result += 1;
     }
+    std.debug.print("result: {d}, cnt: {d}\n", .{ result, cnt });
 }
