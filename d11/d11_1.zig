@@ -75,5 +75,7 @@ pub fn main() !void {
         result += entry.value_ptr.*;
     }
 
+    cur_set.deinit();
+
     std.debug.print("\nresult: {d}\n", .{result});
 }
